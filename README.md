@@ -31,8 +31,8 @@ PS: 如果你想入门Vue,但苦于没有难度合适的项目的话，Here For 
 ```bash
 git clone https://github.com/shuiRong/VueCnodeJS.git
 cd VueCnodeJS
-npm install // 或者 yarn
-npm run serve // 或者 yarn serve
+npm install    # yarn
+npm run serve  # yarn serve
 ```
 
 PS: 默认用的是 8080 端口。

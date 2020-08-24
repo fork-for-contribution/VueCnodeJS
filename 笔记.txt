@@ -12,11 +12,11 @@ src
 ├── main.js                 // 项目的入口 js 文件
 ├── plugins
 │   └── element.js          // 初始化用到的组件
-├── router.js
+├── router.js               // vue-router
 ├── utils
-│   ├── api.js
+│   ├── api.js              // 获取数据
 │   ├── eventProxy.js
-│   ├── request.js
+│   ├── request.js          // 封装 axios
 │   ├── tab.js
 │   └── util.js
 └── views
