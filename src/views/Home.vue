@@ -24,22 +24,22 @@
 /**
  * 主页
  */
-import Content from '@/components/Content.vue';
-import { getTopics } from '@/utils/api';
-import { setSession, getSession } from '@/utils/util';
+import Content from "@/components/Content.vue";
+import { getTopics } from "@/utils/api";
+import { setSession, getSession } from "@/utils/util";
 export default {
   /**
    * 给此组件起的名字，会显示在Vue的DevTool里面
    */
-  name: 'Home',
+  name: "Home",
   /**
    * 当前组件的‘数据中心'
    */
   data() {
     return {
       page: 1,
-      limit: 20,  // 初始只显示 20 条
-      tab: 'all',
+      limit: 20, // 初始只显示 20 条
+      tab: "all",
       list: [],
       store: {}, // 存储所有Tab对应的数据，因为切换Tab后就没必要重新以limit:20加载数据。
     };
@@ -85,34 +85,33 @@ export default {
      * 否：重新获取数据
      */
     tabChanged() {
+      setSession("activeTab", this.tab);
+
       const store = this.store;
-      // console.log(this.tab);
-      setSession('activeTab', this.tab);
       // 如果未存储当前Tab的数据，重新获取
-      if (!store[this.tab]) {
+      if (store[this.tab]) {
+        this.list = store[this.tab].data;
+        this.limit = store[this.tab].limit;
+      } else {
         this.limit = 20;
         this.list = [];
         this.getTopics();
-        return;
       }
-
-      this.list = store[this.tab].data;
-      this.limit = store[this.tab].limit;
     },
   },
   /**
    * 一般此钩子下面调用接口获取数据
    */
   created() {
-    this.tab = getSession('activeTab') ? getSession('activeTab') : 'all';
+    this.tab = getSession("activeTab") || "all";  // 默认显示「全部」
     this.getTopics();
-    window.addEventListener('scroll', this.scrollMethod);
+    window.addEventListener("scroll", this.scrollMethod);
   },
   /**
    * 组件被销毁的钩子：移除绑定的滚动事件
    */
   destroyed() {
-    window.removeEventListener('scroll', this.scrollMethod);
+    window.removeEventListener("scroll", this.scrollMethod);
   },
   /**
    * 注册引用进来的其他组件
