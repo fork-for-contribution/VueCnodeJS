@@ -25,7 +25,8 @@ PS: 如果你想入门Vue,但苦于没有难度合适的项目的话，Here For 
 
 
 ```bash
-git clone https://github.com/shuiRong/VueCnodeJS.git
+# https://github.com/shuiRong/VueCnodeJS.git
+git clone git clone git@github.com:fork-for-contribution/VueCnodeJS.git
 cd VueCnodeJS
 npm install    # yarn
 npm run serve  # yarn serve
