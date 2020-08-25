@@ -18,6 +18,7 @@ Vue.prototype.$moment = moment
 Vue.prototype.$tab = tab
 
 new Vue({
+  el: '#app',
   router,
   render: h => h(App)
-}).$mount('#app')
+})
