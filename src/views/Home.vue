@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       page: 1,
-      limit: 20,
+      limit: 20,  // 初始只显示 20 条
       tab: 'all',
       list: [],
       store: {}, // 存储所有Tab对应的数据，因为切换Tab后就没必要重新以limit:20加载数据。
@@ -58,11 +58,11 @@ export default {
         tab: this.tab,
       }).then((res) => {
         this.list = res.data;
+        // 每次加载 10 条
         this.limit = this.limit + 10;
 
-        const store = this.store;
-        // 将数据存储到对应的key下
-        store[this.tab] = {
+        // 将数据存储到对应的 tab 下
+        this.store[this.tab] = {
           limit: this.limit,
           data: res.data,
         };

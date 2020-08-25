@@ -2,13 +2,13 @@ src
 ├── App.vue                 // 项目的入口 Vue 文件
 ├── assets                  // 图片，字体，公共样式
 ├── components
-│   ├── Content.vue
-│   ├── Divider.vue
+│   ├── Content.vue         // 一个帖子的标题
+│   ├── Divider.vue         // 一条分割线
 │   ├── Header.vue
-│   ├── OtherTopic.vue
+│   ├── OtherTopic.vue      // 这三个组件构成用户详情页
 │   ├── ProfilePanel.vue
 │   ├── RecentReply.vue
-│   └── Reply.vue
+│   └── Reply.vue           // 帖子后的一个评论
 ├── main.js                 // 项目的入口 js 文件
 ├── plugins
 │   └── element.js          // 初始化用到的组件
@@ -20,9 +20,9 @@ src
 │   ├── tab.js
 │   └── util.js
 └── views
-    ├── Home.vue
-    ├── Topic.vue
-    └── User.vue
+    ├── Home.vue            // 首页
+    ├── Topic.vue           // 帖子内容页面
+    └── User.vue            // 用户主页
 
 
 
@@ -74,3 +74,19 @@ export function Plugin2(Vue) {
 // 这种方式我们只能在一个函数中编写插件逻辑，可封装性就不是那么强了
 
 
+v-bind:key 简写为 :key，用于定义动态 prop。
+@error 绑定事件回调。
+
+<template v-for 代替 <div v-for，避免多余的 包装 div。
+
+<router-link> 总是优于 <a>，参考 https://router.vuejs.org/zh/api/#router-link。
+
+组件的 data 选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝，避免多实例状态干扰。https://cn.vuejs.org/v2/guide/components.html#data-必须是一个函数
+
+父组件通过 props 传递数据给子组件。https://cn.vuejs.org/v2/guide/components-props.html
+.sync 用于同时传递数据和操作该数据的函数。
+
+组件自身的数据定义在 data: 中。
+操作 data 的方法定义在 methods: 中。
+
+watch: 监听 props 和 data 中的值是否有变化。

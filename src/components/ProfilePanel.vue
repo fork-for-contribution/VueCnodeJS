@@ -55,6 +55,7 @@ export default {
     fetchData(loginname) {
       getUserByName(loginname).then(res => {
         this.user = res.data;
+        // 调用 "user" topic 下的所有回调
         eventProxy.trigger("user", res.data);
       });
     }

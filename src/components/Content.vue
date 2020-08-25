@@ -50,12 +50,14 @@ export default {
       article: [],
     };
   },
+  // https://cn.vuejs.org/v2/api/#methods
   methods: {
     // 图片加载失败方法
     imgErr(url) {
       console.log(url);
     },
   },
+  // https://cn.vuejs.org/v2/guide/filters.html
   filters: {
     imgCheck(url) {
       /* 源地址： https://avatars[1|2].githubusercontent.com/u/1159760?v=4&s=120

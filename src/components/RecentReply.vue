@@ -65,6 +65,7 @@ export default {
   created() {
     // 增加属性，表示当前实例未被卸载
     this.isUnmounted = false;
+    // 在 "user" topic 下注册一个回调
     eventProxy.on("user", data => {
       // 如果当前实例被卸载了，就没有必要更新其state了（会引起内存泄漏）
       if (!this.isUnmounted) {

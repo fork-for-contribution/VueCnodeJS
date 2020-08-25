@@ -44,6 +44,7 @@ export default {
    * 通过在这里定义变量，可以让父组件通过这些变量向此组件传递数据
    * P.S. https://cn.vuejs.org/v2/guide/components.html#%E9%80%9A%E8%BF%87-Prop-%E5%90%91%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE
    */
+  // https://cn.vuejs.org/v2/guide/components-props.html#Prop-类型
   props: {
     simple: {
       default: true,
@@ -65,6 +66,7 @@ export default {
   created() {
     // 增加属性，表示当前实例未被卸载
     this.isUnmounted = false;
+    // 组件创建时，在 "user" topic 下注册一个回调
     eventProxy.on("user", data => {
       // 如果当前实例被卸载了，就没有必要更新其state了（会引起内存泄漏）
       if (!this.isUnmounted) {
