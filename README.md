@@ -12,12 +12,8 @@
 
 ```bash
 PS: 如果你想入门Vue,但苦于没有难度合适的项目的话，Here For You!
-
-考虑到别人可能会看我源码来学习Vue，我添加了"非常详细的注释"。贴心吧，嘻嘻～
 ```
 **2018-12-25:** 最近学了React，然后写了对应的[React.js版](https://github.com/shuiRong/ReactCnodeJS)，希望帮到正在/将要学习React的同学
-
-**2018-12-9:** 重构了项目：界面更美观，代码更优雅。
 
 **2017-9-9:** 我又为本项目写了个[Nuxt.js](https://zh.nuxtjs.org/)的版本.完美解决了 SEO 问题(Vue 这种 MVVM 框架一直被人诟病没有解决 SEO,但是现在我们有了 Nuxt). 代码在`nuxtVersion`文件中. **需要注意的地方我写在了代码注释里**
 

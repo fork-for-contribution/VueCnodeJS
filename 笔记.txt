@@ -90,3 +90,5 @@ v-bind:key 简写为 :key，用于定义动态 prop。
 操作 data 的方法定义在 methods: 中。
 
 watch: 监听 props 和 data 中的值是否有变化。
+
+beforeRouteUpdate(to, from, next) 在当前路由改变，但该组件被复用时调用。即元素不变，样式或数据变了。
